@@ -1,0 +1,114 @@
+<div class="container">
+  <h1 class="display4">JavaScript</h1>
+  <p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN</a></p>
+  <div>
+  
+
+  JavaScript è case sensitive e utilizza i caratteri Unicode.
+
+  <!-- Uno statement non richiede il ; se è l'unico nella riga, ma è meglio metterlo comunque.
+
+  Commenti 
+  //
+  /* */
+
+  Variabili -->
+
+  Le variabili possono essere definite in tre modi:
+  <ul>
+    <li>var - variabile base</li>
+    <li>let - varibile locale, block scoped</li>
+    <li>const - costante, block scoped, deve essere inizializzata, non può avere lo stesso nome di una variabile o di una funzione; un oggetto costante può essere modificato nei suoi campi (idem per un array)</li>
+  </ul>
+
+<!-- 
+
+Valore finchè non è assegnata = undefined
+
+Si può controllare se una variabile ha un valore con === undefined
+
+In un contesto booleano una variabile undefined assume il valore false, in un contesto numerico assume il valore NaN (not a number).
+
+In un contesto booleano una variabile null assume il valore false, in un contesto numerico assume il valore 0.
+
+Variable Hoisting
+
+JS dà la possibilità di riferirsi ad una variabile dichiarata successivamente (solo con var), tuttavia mantiene il valore undefined quando viene usata prima della dichiarazione.
+
+Le variabili globali sono proprietà dell'oggetto globale window.
+
+Tipi (6 primitivi + object)
+
+Boolean
+null
+undefined
+Number 
+String
+Symbol
+
+Conversione Tipi
+
+JS è tipato dinamicamente: non necessita che venga specificato il tipo e i tipi vengono convertiti durante l'esecuzione in base alle necessità
+
+Quando una variabile ha un valore String + Number, il Number viene convertito a String. Se invece vengono usati operatori diversi dal +, la stringa viene convertita in numero.
+
+Un numero memorizzato come stringa è possibile convertirlo manualmente con parseInt e parseFloat
+
+Litterals
+[...]
+
+Condizioni
+
+if..else
+switch
+
+Valori che valgono come false:
+false
+undefined
+null
+0
+NaN
+""
+
+Eccezioni
+
+throw per lanciarlo
+try..catch per gestirlo
+finally eventuale -->
+
+  L'errore lanciato può essere di qualsiasi tipo, ma conviene usare quelli definti da
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Error_types">ES6</a> o dal
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMException">DOM</a>.
+
+
+<!-- Promises
+Nuova funzionalità per gestire il flusso di operazioni asincrone.
+Un oggetto Promise può avere 4 stati:
+pending - in attesa
+fulfilled - operazione a buon fine
+rejected - operazione fallita
+settled - fulfilled o rejected, ma non pending
+
+Iterazioni
+
+Modi per iterare -->
+
+<!-- for
+while
+do..while
+break - interrompe un iterazione
+continue - passa all'iterazione successiva
+for..in - itera oggetti
+for (variable in object) {
+  statements
+}
+for..of - usato per oggetti iterabili (array, map, set, object)
+for (variable of object) {
+  statement
+}
+forEach - esegue una funzione per ogni elemento dell'array (o oggetto)
+array.forEach(function(element) {
+    console.log(element);
+}); -->
+  </div>
+</div>
