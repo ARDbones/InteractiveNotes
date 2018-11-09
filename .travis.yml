@@ -13,10 +13,10 @@ cache:
     - node_modules
 
 install:
-  - npm install -g yarn
+  - npm install -g
 
 script:
-  - yarn build --base-href https://ARDbones.github.io/InteractiveNotes/
+  - ng build --base-href https://ARDbones.github.io/InteractiveNotes/
 deploy:
   provider: pages
   skip_cleanup: true
