@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-javascript',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JavascriptComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    titleService.setTitle('JavaScript - Interactive Notes');
+  }
 
   ngOnInit() {
   }

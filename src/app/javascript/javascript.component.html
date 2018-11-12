@@ -1,132 +1,226 @@
-<div class="container">
+<div class="container mt-1">
   <h1 class="display-4">JavaScript</h1>
-  <p>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN</a></p>
-  <div>
-  
-  <p>
+  <small>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+  <div class="mt-4">
+    <p>
       JavaScript è case sensitive e utilizza i caratteri Unicode.
-
       Uno statement non richiede il ; se è l'unico nella riga, ma è meglio metterlo comunque.
-    
-      Commenti 
-      //
-      /* */
-  </p>
+      Una linea di commento si inserisce con <code>//</code>, mentre un blocco è racchiuso in <code>/* */</code>.
+    </p>
 
-  <h2 class="lead">Variabili</h2>
-
-  <p>Le variabili possono essere definite in tre modi:</p>
-  <ul>
-    <li>var - variabile base</li>
-    <li>let - varibile locale, block scoped</li>
-    <li>const - costante, block scoped, deve essere inizializzata, non può avere lo stesso nome di una variabile o di una funzione; un oggetto costante può essere modificato nei suoi campi (idem per un array)</li>
-  </ul>
-
-  <p>
-      Valore finchè non è assegnata = undefined
-
-      Si può controllare se una variabile ha un valore con === undefined
-      
-      In un contesto booleano una variabile undefined assume il valore false, in un contesto numerico assume il valore NaN (not a number).
-      
-      In un contesto booleano una variabile null assume il valore false, in un contesto numerico assume il valore 0.
-  </p>
-
-  <h2 class="lead">Variable Hoisting</h2>
-
-  <p>
-    JS dà la possibilità di riferirsi ad una variabile dichiarata successivamente (solo con var), tuttavia mantiene il valore undefined quando viene usata prima della dichiarazione.
-    Le variabili globali sono proprietà dell'oggetto global window.
-  </p>
-
-  <h2 class="lead">Tipi (6 primitivi + object)</h2>
+    <h2 class="lead">Variabili</h2>
+    <p>Le variabili possono essere definite in tre modi:</p>
     <ul>
-      <li>Boolean</li>
-      <li>null</li>
+      <li><code>var</code> - variabile base</li>
+      <li><code>let</code> - varibile locale, block scoped</li>
+      <li><code>const</code> - costante, block scoped, deve essere inizializzata, non può avere lo stesso nome di una variabile o di una funzione; un oggetto costante può essere modificato nei suoi campi (idem per un array)</li>
+    </ul>
+    <p>
+      Il valore di una variabile è <code>undefined</code> finché non è inizializzata.
+      Si può controllare se una variabile ha un valore con <code>=== undefined</code>.
+      In un contesto booleano una variabile <code>undefined</code> assume il valore <code>false</code>, in un contesto numerico assume il valore <code>NaN</code> (not a number).
+      In un contesto booleano una variabile <code>null</code> assume il valore <code>false</code>, in un contesto numerico assume il valore 0.
+    </p>
+    <p>
+      JS dà la possibilità di riferirsi ad una variabile dichiarata successivamente (solo con var), tuttavia mantiene il valore <code>undefined</code> quando viene usata prima della dichiarazione.
+      Questa proprietà è detta Variable Hoisting.
+    </p>
+    <p>Le variabili globali sono proprietà dell'oggetto global window.</p>
+
+    <hr>
+    <h2 class="lead">Tipi (6 primitivi + object)</h2>
+      <ul>
+        <li>Boolean</li>
+        <li>null</li>
+        <li>undefined</li>
+        <li>Number</li>
+        <li>String</li>
+        <li>Symbol</li>
+      </ul>
+
+    <hr>
+    <h2 class="lead">Conversione Tipi</h2>
+    <p>
+      JS è tipato dinamicamente: non necessita che venga specificato il tipo e i tipi vengono convertiti durante l'esecuzione in base alle necessità.
+      Quando una variabile ha un valore String + Number, il Number viene convertito a String. Se invece vengono usati operatori diversi dal +, la stringa viene convertita in numero.
+      Un numero memorizzato come stringa è possibile convertirlo manualmente con <code>parseInt()</code> e <code>parseFloat()</code>, entrambi metodi di Number.
+    </p>
+
+    <hr>
+    <h2 class="lead">Condizioni</h2>
+    <p>
+      Le istruzioni condizionali usano:
+    </p>
+    <ul>
+      <li>if...else</li>
+      <li>switch</li>
+    </ul>
+    <p>Valori che valgono come false:</p>
+    <ul>
+      <li>false</li>
       <li>undefined</li>
-      <li>Number</li>
-      <li>String</li>
-      <li>Symbol</li>
+      <li>null</li>
+      <li>0</li>
+      <li>NaN</li>
+      <li>" "</li>
     </ul>
 
-  <h2 class="lead">Conversione Tipi</h2>
+    <hr>
+    <h2 class="lead">Eccezioni</h2>
+    <p>
+      Similmente ad altri linguaggi, le eccezioni sono lanciate dal throw, gestite da un try...catch e può avere un finally conclusivo.
+      L'errore lanciato può essere di qualsiasi tipo, ma conviene usare quelli definti da
+      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Error_types">ES6 <i class="fas fa-external-link-alt icon-external-link"></i></a> o dal
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMException">DOM <i class="fas fa-external-link-alt icon-external-link"></i></a>.
+    </p>
+    <p>
+      Un modo alternativo per gestire il flusso di operazioni asincrone è l'uso delle Promises.
+      Un oggetto Promise può avere 4 stati:
+    </p>
+    <ul>
+      <li>pending - in attesa</li>
+      <li>fulfilled - operazione a buon fine</li>
+      <li>rejected - operazione fallita</li>
+      <li>settled - fulfilled o rejected, ma non pending</li>
+    </ul>
 
-  <p>
-      JS è tipato dinamicamente: non necessita che venga specificato il tipo e i tipi vengono convertiti durante l'esecuzione in base alle necessità
+    <hr>
+    <h2 class="lead">Iterazioni</h2>
+    <p>
+      Esistono diversi modi per iterare:
+    </p>
+    <ul>
+      <li>for</li>
+      <li>while</li>
+      <li>do...while</li>
+      <li>for...in su array</li>
+      <li>for...of su oggetti iterabili</li>
+    </ul>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+        for (variable in/of object) &#123;
+          statements
+        &#125;
+    </code></pre>
+    <p>Il flusso di un'iterazione può essere interrotto con un break o è possibile passare all'iterazione successiva con il continue.
+      Esiste inoltre la funzione forEach() per eseguire una data funzione su ogni elemento di un array o un oggetto.
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      array.forEach(function(element) &#123;
+          console.log(element);
+      &#125;);
+    </code></pre>
 
-      Quando una variabile ha un valore String + Number, il Number viene convertito a String. Se invece vengono usati operatori diversi dal +, la stringa viene convertita in numero.
-    
-      Un numero memorizzato come stringa è possibile convertirlo manualmente con parseInt e parseFloat
-  </p>
+    <hr>
+    <h2 class="lead">Funzioni</h2>
+    <p>
+      Una funzione è definita con la keyword <code>function</code>. I parametri di tipo primitivo sono passati per valore e non cambiano al di fuori della funzione.
+      Invece se vengono passati oggetti, la funzione può modificare le sue proprietà e le modifiche rimangono visibili anche all'esterno della funzione.
+      Una funzione può accedere a tutte le variabili e funzioni definite nello scope in cui è definito.
+    </p>
+    <p>
+      Esiste la possibilità di creare funzioni tramite espressioni.
+      Queste funzioni possono essere anonime o avere un nome utililizzabile per chiamate ricorsive.
+      La particolarità di questa soluzione è che permette di passare funzioni ad altre funzioni come parametro.
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      var f;
+      var a = "variabile";
+      if(condizione)  f = function(a) &#123; statements_1 &#125;
+      else  f = function (a) &#123; statementss_2 &#125;
+      function doSomething(f, a)&#123;
+        return f(a);
+      &#125;
+    </code></pre>
+    <p>
+      Una funzione può essere definita dentro un'altra funzione.
+      La funzione interna è detta <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions#Closures">closure <i class="fas fa-external-link-alt icon-external-link"></i></a> ed è privata rispetto la funzione esterna, mentre quella interna eredita lo scope della funzione esterna. 
+    </p>
+    <p>
+      Gli argomenti di una funzione sono memorizzati in un oggetto-array: <code>arguments[i]</code>.
+      Grazie a questo oggetto è possibile chiamare una funzione con più parametri rispetto a quelli che accetterebbe, utile se non si sa in anticipo il numero di argomenti passati.
+      I parametri possono avere un valore di default assegnato nella definizione della funzione.
+      Similmente ad arguments, si può raggruppare un numero indifinito di parametri in un array utilizzando i parametri rest: <code>...argomenti</code>.
+    </p>
+    <p>
+      Le funzioni freccia (arrow function expression) sono particolari funzioni anonime, senza this, arguments, super e new che hanno una sintassi più breve.
+      Il vantaggio di non avere un proprio this è di essere più chiaro in un contesto ad oggetti.
+      Queste funzioni hanno i parametri di input prima della freccia e l'output/codice da eseguire dopo la freccia.
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      f(input => output);
+    </code></pre>
 
-<!-- 
-  Litterals
-  [...] -->
+    <hr>
+    <h2 class="lead">Espressioni e operatori</h2>
+    <p>
+      Ci sono operatori di diverso tipo: 
+    </p>
+    <ul>
+      <li>Assegnazione</li>
+      <ul>
+        <li>Assegnazione standard ( = )</li>
+        <li>Assegnazione con operazione ( +=, *=, -=, /= )</li>
+      </ul>
+      <li>Confronto</li>
+      <ul>
+        <li>Uguaglianza ( == ) - confronta i due operandi convertendoli se non sono dello stesso tipo</li>
+        <li>Uguaglianza stretta ( === ) - confronta i due operandi senza conversione</li>
+        <li>Disuguaglianza ( !=, !== )</li>
+        <li>Maggiore e minore ( >, < )</li>
+      </ul>
+      <li>Aritmetici ( +, -, *, / )</li>
+      <li>Su bit ( &, |, ^ )</li>
+      <li>Logici ( &&, ||, ! ), valutati secondo cortocircuito, quindi:</li>
+      <ul>
+        <li>false && qualcosa -> false</li>
+        <li>true || qualcosa -> true</li>
+      </ul>
+      <li>Relazionali</li>
+      <ul>
+        <li>in - ritorna true se una proprietà è presente nell'oggetto</li>
+        <li>instanceof - ritorna true se l'oggetto è del tipo specificato</li>
+      </ul>
+      <li>Unari</li>
+      <ul>
+        <li><code>delete</code> - cancella un oggetto, un elemento di un array o la proprietà specificata di un oggetto</li>
+        <li><code>typeof</code> - ritorna il tipo dell'operando come stringa</li>
+        <li><code>void</code> - indica che un'espressione va valutata senza ritornare un valore</li>
+      </ul>
+      <li>Operatore virgola</li>
+      <li>Operatore ternario condizionale ( a ? b : c )</li>
+    </ul>
+    <p>
+      Le principali espressioni note:
+    </p>
+    <ul>
+      <li><code>this</code> - si riferisce all'oggetto corrente e si usa con <code>this.propertyName</code> o con <code>this['propertyName']</code></li>
+      <li><code>new</code> - crea un'istanza di un oggetto</li>
+      <li><code>super</code> - keyword utilizzata per chiamare funzioni del genitore</li>
+    </ul>
 
-  <h2 class="lead">Condizioni</h2>
+    <hr>
+    <h2 class="lead">Numeri e date</h2>
+    <p>
+      I numeri in JS sono implementati in doppia precisione e non sono distinti tra integer e float. Ci sono tre valori simbolici: 
+    </p>
+    <ul>
+      <li><code>+Infinity</code></li>
+      <li><code>-Infinity</code></li>
+      <li><code>NaN</code></li>
+    </ul>
+    <p>
+      L'oggetto Number ha come proprietà costanti numeriche e alcuni metodi d'utilità.
+      L'oggetto Math invece mette a disposizione costanti e funzioni matematiche.
+      Alcuni metodi utili: <code>round</code> (arrotonda), <code>fix(n)</code> (tronca a n cifre decimali).
+    </p>
+    <p>
+      Le date in JS vengono gestite tramite l'oggetto Date che mette a disposizione diversi metodi.
+    </p>
 
-  <p>
-      if..else
-      switch
-  </p>
-
-
-  <p>Valori che valgono come false:</p>
-  <ul>
-    <li>false</li>
-    <li>undefined</li>
-    <li>null</li>
-    <li>0</li>
-    <li>NaN</li>
-    <li>""</li>
-  </ul>
-
-  <h2 class="lead">Eccezioni</h2>
-
-  <p>
-      throw per lanciarlo
-      try..catch per gestirlo
-      finally eventuale
-  </p>
-
-  <p>L'errore lanciato può essere di qualsiasi tipo, ma conviene usare quelli definti da
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Error_types">ES6</a> o dal
-    <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMException">DOM</a>.
-  </p>
+    <hr>
+    <h2 class="lead"></h2>
 
 
-  <h3 class="lead">Promises</h3>
-  <p>Nuova funzionalità per gestire il flusso di operazioni asincrone.
-  Un oggetto Promise può avere 4 stati:
-  </p>
-  <ul>
-    <li>pending - in attesa</li>
-    <li>fulfilled - operazione a buon fine</li>
-    <li>rejected - operazione fallita</li>
-    <li>settled - fulfilled o rejected, ma non pending</li>
-  </ul>
-
-  <h2 class="lead">Iterazioni</h2>
-
-  <!-- Modi per iterare 
-
-  for
-  while
-  do..while
-  break - interrompe un iterazione
-  continue - passa all'iterazione successiva
-  for..in - itera oggetti
-  for (variable in object) {
-    statements
-  }
-  for..of - usato per oggetti iterabili (array, map, set, object)
-  for (variable of object) {
-    statement
-  }
-  forEach - esegue una funzione per ogni elemento dell'array (o oggetto)
-  array.forEach(function(element) {
-      console.log(element);
-  }); -->
 
   </div>
 </div>

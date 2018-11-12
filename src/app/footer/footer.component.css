@@ -1,0 +1,6 @@
+.fakeLink{
+    cursor: pointer;
+}
+.fakeLink:hover{
+    text-decoration: underline;
+}
