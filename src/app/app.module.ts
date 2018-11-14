@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { FooterComponent } from './footer/footer.component';
 import { JavascriptComponent } from './javascript/javascript.component';
+import { AngularComponent } from './angular/angular.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { JavascriptComponent } from './javascript/javascript.component';
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
-    JavascriptComponent
+    JavascriptComponent,
+    AngularComponent
   ],
   imports: [
     BrowserModule,

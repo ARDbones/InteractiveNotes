@@ -1,0 +1,79 @@
+<div class="container pt-3">
+    <h1 class="display-4">Angular</h1>
+    <small>Fonte: <a href="https://angular.io/docs">Guida ufficiale Angular <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+    <div class="mt-4">
+    <p>
+      Angular è un framework che semplifica lo sviluppo su più piattaforme grazie alla sua struttura a componenti, che favorisce la riutilizzabilità.
+      A differenza del predecessore AngularJS, Angular si basa su TypeScript.
+    </p>
+    <p>
+      Per la creazione di un progetto si utilizza (per comodità e semplicità) <span class="font-weight-bold">Angular Cli</span> che tramite una serie di comandi permette di creare facilemente il progetto e le sue componenti.
+      I comandi principali di Angular Cli sono:
+    </p>
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Comando</th>
+            <th scope="col">Descrizione</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">ng new NomeProgetto</td>
+            <td>Crea un progetto</td>
+          </tr>
+          <tr>
+            <td scope="row">ng generate component NomeComponente</td>
+            <td>Crea un componente</td>
+          </tr>
+          <tr>
+            <td scope="row">ng generate service NomeServizio</td>
+            <td>Crea un servizio</td>
+          </tr>
+          <tr>
+            <td scope="row">ng generate module app-routing --flat --module=app</td>
+            <td>Crea un modulo per il routing</td>
+          </tr>
+          <tr>
+            <td scope="row">ng serve</td>
+            <td>Compila il progetto e lo attiva in localhost:4200</td>
+          </tr>
+          <tr>
+            <td scope="row">ctrl+c</td>
+            <td>Termina il serve</td>
+          </tr>
+        </tbody>
+      </table>
+    
+    
+    <p>
+      Ogni componente ha il suo css e il suo template html che vengono generati in automatico da Angular Cli come file separati (in alternativa si possono definire dentro al component).
+      Un componente va incluso nelle pagine html dove si vuole renderizzarlo tramite <code>&lt;app-nomeComponente&gt;&lt;/app-nomeComponente&gt;</code>.
+    </p>
+    
+    <p>
+      Per utilizzare un campo di un componente si usa l'interpolazione: <code ngNonBindable>{{proprietà}}</code>.
+    </p>
+    <p>
+      Angular permette di integrare la prima validazione dei form nel codice html. 
+      <!-- Per dettagli si rimanda alla <a href="https://angular.io/guide/form-validation">documentazione</a>. -->
+    </p>
+    
+    
+    <h2 class="display-4 mb-4">Observable e RxJs</h2>
+    <p>
+      <code>Observable</code> è un tipo per passare messaggi, utile per la gestione degli eventi e per la programmazione asincrona.
+      Gli <code>Observable</code> sono dichiarativi: si definisce una funzione che viene eseguita quando viene invocato il metodo <code>subscribe()</code>.
+      Viene ritornato un oggetto <code>Subscription</code> che può interrompere la ricezione di notifiche con il metodo <code>unsubscribe()</code>.
+    </p>
+    <p>
+      RxJs è una libreria per la programmazione reattiva tramite il tipo <code>Observable</code>. 
+      La libreria mette a disposizione funzioni che permettono una creazione più facile di <code>Observable</code> da eventi, timers o promises e operatori che permettono la manipolazione delle collezioni.
+      Il metodo <code>subscribe()</code> è essenziale per l'esecuzione delle funzioni e degli operatori di RxJs e funziona in modo leggermente diverso in base al contesto di utilizzo.
+    </p>
+    <p>
+      Per convenzione un <code>Observable</code> viene chiamato con il $ alla fine del nome: <code>Osservatore$ : Observable&lt;T&gt;;</code>.
+    </p>
+  </div>
+</div>

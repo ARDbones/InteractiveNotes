@@ -1,6 +1,9 @@
-<div class="container mt-1">
-  <h1 class="display-4">JavaScript</h1>
-  <small>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+<div class="container pt-3">
+  <h1 class="display-4">JavaScript <span class="text-primary titleTS" (click)="showTS()">& TypeScript</span></h1>
+  <div>
+    <small>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+    <small class="hiddenTS">Fonte: <a href="https://www.typescriptlang.org/docs/home.html">Guida ufficiale TS <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+  </div>
   <div class="mt-4">
     <p>
       JavaScript è case sensitive e utilizza i caratteri Unicode.
@@ -8,7 +11,16 @@
       Una linea di commento si inserisce con <code>//</code>, mentre un blocco è racchiuso in <code>/* */</code>.
     </p>
 
-    <h2 class="lead">Variabili</h2>
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Variabili</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
     <p>Le variabili possono essere definite in tre modi:</p>
     <ul>
       <li><code>var</code> - variabile base</li>
@@ -28,7 +40,14 @@
     <p>Le variabili globali sono proprietà dell'oggetto global window.</p>
 
     <hr>
-    <h2 class="lead">Tipi (6 primitivi + object)</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Tipi (6 primitivi + object)</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
       <ul>
         <li>Boolean</li>
         <li>null</li>
@@ -39,15 +58,41 @@
       </ul>
 
     <hr>
-    <h2 class="lead">Conversione Tipi</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Conversione Tipi</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       JS è tipato dinamicamente: non necessita che venga specificato il tipo e i tipi vengono convertiti durante l'esecuzione in base alle necessità.
       Quando una variabile ha un valore String + Number, il Number viene convertito a String. Se invece vengono usati operatori diversi dal +, la stringa viene convertita in numero.
       Un numero memorizzato come stringa è possibile convertirlo manualmente con <code>parseInt()</code> e <code>parseFloat()</code>, entrambi metodi di Number.
     </p>
 
+    <p class="hiddenTS">
+      TS invece aggiunge la possibilità di usare tipi statici tramite type annotations, rendendo più facile l'analisi statica del codice e bloccando la conversione automatica.
+      Le type annotations si possono usare sulle variabili, sui parametri delle funzioni e permettono anche di definire il tipo di ritorno delle funzioni.
+      Una volta usata l'annotation, il tipo dichiarato è fisso e non è possibile passare valori del tipo errato.
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info hiddenTS"><code>
+      var name : string;
+      function greeter(person: string): string &#123;
+        return "Hello, " + person;
+      &#125;
+    </code></pre>
+
     <hr>
-    <h2 class="lead">Condizioni</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Condizioni</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       Le istruzioni condizionali usano:
     </p>
@@ -66,7 +111,14 @@
     </ul>
 
     <hr>
-    <h2 class="lead">Eccezioni</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Eccezioni</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       Similmente ad altri linguaggi, le eccezioni sono lanciate dal throw, gestite da un try...catch e può avere un finally conclusivo.
       L'errore lanciato può essere di qualsiasi tipo, ma conviene usare quelli definti da
@@ -85,7 +137,14 @@
     </ul>
 
     <hr>
-    <h2 class="lead">Iterazioni</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Iterazioni</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       Esistono diversi modi per iterare:
     </p>
@@ -111,7 +170,14 @@
     </code></pre>
 
     <hr>
-    <h2 class="lead">Funzioni</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Funzioni</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       Una funzione è definita con la keyword <code>function</code>. I parametri di tipo primitivo sono passati per valore e non cambiano al di fuori della funzione.
       Invece se vengono passati oggetti, la funzione può modificare le sue proprietà e le modifiche rimangono visibili anche all'esterno della funzione.
@@ -151,7 +217,14 @@
     </code></pre>
 
     <hr>
-    <h2 class="lead">Espressioni e operatori</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Espressioni e operatori</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       Ci sono operatori di diverso tipo: 
     </p>
@@ -199,7 +272,14 @@
     </ul>
 
     <hr>
-    <h2 class="lead">Numeri e date</h2>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Numeri e date</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
     <p>
       I numeri in JS sono implementati in doppia precisione e non sono distinti tra integer e float. Ci sono tre valori simbolici: 
     </p>
@@ -218,9 +298,14 @@
     </p>
 
     <hr>
-    <h2 class="lead"></h2>
-
-
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Espressioni regolari</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
 
   </div>
 </div>
