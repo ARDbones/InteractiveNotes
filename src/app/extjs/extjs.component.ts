@@ -3,15 +3,15 @@ import { Title } from '@angular/platform-browser';
 declare var $: any;
 
 @Component({
-  selector: 'app-angular',
-  templateUrl: './angular.component.html',
-  styleUrls: ['./angular.component.css']
+  selector: 'app-extjs',
+  templateUrl: './extjs.component.html',
+  styleUrls: ['./extjs.component.css']
 })
-export class AngularComponent implements OnInit {
+export class ExtjsComponent implements OnInit {
 
   constructor(private titleService: Title) {
     let self = this;
-    titleService.setTitle('Angular - Interactive Notes');
+    titleService.setTitle('Ext JS - Interactive Notes');
   }
 
   ngOnInit() {

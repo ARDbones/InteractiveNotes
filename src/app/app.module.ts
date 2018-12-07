@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FooterComponent } from './footer/footer.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { AngularComponent } from './angular/angular.component';
+import { ExtjsComponent } from './extjs/extjs.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AngularComponent } from './angular/angular.component';
     PageNotFoundComponent,
     FooterComponent,
     JavascriptComponent,
-    AngularComponent
+    AngularComponent,
+    ExtjsComponent
   ],
   imports: [
     BrowserModule,

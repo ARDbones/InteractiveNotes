@@ -1,0 +1,72 @@
+<div class="container pt-3">
+  <h1 class="display-4">Ext JS</h1>
+  <small>Fonte: <a href="https://www.tutorialspoint.com/extjs/index.htm">Guida Tutorialspoint <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
+  <div class="mt-4">
+    <p>
+      Ext JS è un framework JavaScript per sviluppare interfacce web dinamiche. Il framework è integrabile nel progetto tramite CDN o scaricando i file della libreria.
+      Il framework nelle sue versioni più recenti è gratuito solo se il progetto è opensource e non a fini commerciali.
+    </p>
+
+    <p>
+      Il metodo base è <code>Ext.onReady()</code> che viene eseguito una volta per renderizzare gli elementi.
+    </p>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Classi e oggetti</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+    <p>Una nuova classe viene definita nel seguente modo:</p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      Ext.define(class name, class members/properties, callback function);
+    </code></pre>
+    <p>dove:</p>
+    <ul>
+      <li>
+        Class name indica il nome della classe in base alla struttura dell'applicazione.
+      </li>
+      <li>
+        Class members/properties definisce il comportamento della classe.
+      </li>
+      <li>
+        La callback è opzionale e viene eseguita dopo il caricamento riuscito della classe.
+      </li>
+    </ul>
+    <p>
+      Un oggetto può essere creato utilizzando la <code>new</code> oppure con il metodo <code>Ext.create()</code>.
+    </p>
+    <p>
+      Ext JS permette l'uso dell'ereditarietà con due modi: <code>Ext.extend</code> o con i Mixins. Il primo metodo definisce l'estensione come proprietà:
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      Ext.define(appName.folderName.className, &#123;
+        extend : 'Ext.grid.GridPanel',
+        ...
+        &#125;);
+    </code></pre>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Contenitori</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+
+
+
+
+   
+    
+
+
+  </div>
+</div>
