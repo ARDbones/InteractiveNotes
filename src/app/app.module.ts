@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { JavascriptComponent } from './javascript/javascript.component';
 import { AngularComponent } from './angular/angular.component';
 import { ExtjsComponent } from './extjs/extjs.component';
+import { IonicComponent } from './ionic/ionic.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ExtjsComponent } from './extjs/extjs.component';
     FooterComponent,
     JavascriptComponent,
     AngularComponent,
-    ExtjsComponent
+    ExtjsComponent,
+    IonicComponent
   ],
   imports: [
     BrowserModule,

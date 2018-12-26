@@ -306,6 +306,35 @@
         <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
       </div>
     </div>
+    <p>
+      JS mette a disposizione le espressioni regolari, che si possono creare come oggetti o come litterali.
+      In particolare, se l'espressione è nota e costante, conviene usare la forma litterale, mentre se può cambiare o arriva dall'esterno, conviene creare l'oggetto con il costruttore.
+    </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      var RE = /ab+c/;
+
+      var re = new RegExp('ab+c');
+    </code></pre>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead"></h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead"></h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
 
   </div>
 </div>
