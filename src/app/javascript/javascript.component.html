@@ -315,11 +315,90 @@
 
       var re = new RegExp('ab+c');
     </code></pre>
+    <p>
+      L'elenco completo di caratteri speciali usati nelle espressioni regolari si trovano nella <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">guida <i class="fas fa-external-link-alt icon-external-link"></i></a>.
+    </p>
+    <p>
+      Le espressioni regolari sono di solito utilizzate nei metodi test e exec di RegExp e nei metodi match, replace, search, e split di String.
+      Un uso tipico delle espressioni regolari è nel controllo degli input testuali.
+    </p>
 
     <hr>
     <div class="row">
       <div class="col-auto mr-auto">
-        <h2 class="lead"></h2>
+        <h2 class="lead">Array</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+    <p>
+      ...wip...
+    </p>
+    <p>
+      Esistono inoltre gli <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#Typed_Arrays">array tipizzati <i class="fas fa-external-link-alt icon-external-link"></i></a> che permettono di manipolare dati binari.
+    </p>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Map e Set</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+    <p>
+      <code>Map</code> è un contenitore di elementi associati con una chiave univoca, iterabile secondo l'ordine di inserimento. I principali metodi sono:
+    </p>
+    <ul>
+      <li><code>set</code></li>
+      <li><code>get</code></li>
+      <li><code>has</code></li>
+      <li><code>delete</code></li>
+      <li><code>clear</code></li>
+      <li><code>size</code> (è una proprietà)</li>
+    </ul>
+    <p>
+      Rispetto agli oggetti ha alcuni vantaggi:
+    </p>
+    <ul>
+      <li>la chiave può essere qualsiasi valore nella mappa, mentre negli oggetti sono sempre stringhe</li>
+      <li>si può ottenere facilemente la grandezza della mappa</li>
+      <li>è iterabile secondo l'ordine d'inserimento</li>
+    </ul>
+    <p>
+      In sinstesi, conviene usare la <code>Map</code> quando il tipo delle chiavi è sconosciuto fino a runtime, e quando le chiavi sono dello stesso tipo e i valori sono dello stesso tipo.
+    </p>
+    <p>
+      <code>Set</code> è un contenitore di valori univoci iterabili secondo l'ordine di inserimento. I principali metodi sono:
+    </p>
+    <ul>
+      <li><code>add</code></li>
+      <li><code>has</code></li>
+      <li><code>delete</code></li>  
+      <li><code>size</code> (è una proprietà)</li>
+    </ul>
+    <p>
+      Rispetto agli array ha alcuni vantaggi:
+    </p>
+    <ul>
+      <li><code>indexOf</code> degli array è più lento del <code>has</code></li>
+      <li>è più facile cancellare un elemento dato il valore</li>
+      <li>facilita la gestione dei duplicati</li>
+      <li><code>NaN</code> non è possibile trovarlo con <code>indexOf</code></li>
+    </ul>
+
+    <p>
+      Esistono anche le alternative <code>WeakMap</code> e <code>WeakSet</code>, che accettano solo oggetti e non valori generici. 
+    </p>
+
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Oggetti e il modello ad oggetti</h2>
       </div>
       <div class="col-auto">
         <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
@@ -329,12 +408,22 @@
     <hr>
     <div class="row">
       <div class="col-auto mr-auto">
-        <h2 class="lead"></h2>
+        <h2 class="lead">Promise</h2>
       </div>
       <div class="col-auto">
         <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
       </div>
     </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead"></h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>    
 
   </div>
 </div>
