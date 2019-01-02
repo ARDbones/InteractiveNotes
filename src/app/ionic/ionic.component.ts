@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+declare var $: any;
+
 
 @Component({
   selector: 'app-ionic',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IonicComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) {
+    titleService.setTitle('Ionic - Interactive Notes');
+  }
 
   ngOnInit() {
+  }
+
+  goTop() {
+    $('html,body').scrollTop(0);
   }
 
 }

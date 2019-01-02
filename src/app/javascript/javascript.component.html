@@ -334,10 +334,47 @@
     </div>
 
     <p>
-      ...wip...
+      Un array contiene valori riferibili con un indice. Un array può venire creato in diversi modi:
     </p>
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      var arr = new Array(element0, element1, ..., elementN);
+      var arr = Array(element0, element1, ..., elementN);
+      var arr = [element0, element1, ..., elementN];
+    </code></pre>
+
     <p>
-      Esistono inoltre gli <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#Typed_Arrays">array tipizzati <i class="fas fa-external-link-alt icon-external-link"></i></a> che permettono di manipolare dati binari.
+      Array ha la proprietà length che indica la sua lunghezza. Se viene assegnato un nuovo valore a length, l'array viene troncato di conseguenza.
+      Sono disponibili diversi metodi come: 
+    </p>
+    <ul>
+      <li><code>concat</code> unisce due array</li>
+      <li><code>join(" , ")</code> ritorna una stringa con gli elementi concatenati con il carattere usato come delimiter</li>
+      <li><code>push</code> aggiunge un elemento in coda e ritorna la length/li>
+      <li><code>pop</code> rimuove e ritorna l'ultimo elemento</li>
+      <li><code>shift</code> rimuove e ritorna il primo elemento</li>
+      <li><code>unshift</code> aggiunge un elemento all'inizio e ritorna la length</li>
+      <li><code>slice(start_index, end_index)</code> estrae una sezione di array</li>
+      <li><code>splice(index, n, element1, element2, ...)</code> rimuove n elementi a partire dall'indice e aggiunge nuovi elementi (opzionale)</li>
+      <li><code>reverse</code> rovescia l'array</li>
+      <li><code>sort</code> ordina gli elementi</li>
+      <li><code>indexOf(searchElement)</code> trova l'indice di searchElement</li>
+      <li><code>lastIndexOf(searchElement)</code> cerca l'indice di searchElement, ma partendo dalla fine</li>
+    </ul>
+    <p>
+      I successivi metodi sono detti iterativi perchè agiscono su tutto l'array e usano le funzioni callback:
+    </p>
+    <ul>
+      <li><code>forEach</code> esegue la callback per ogni elemento e ritorna undefined</li>
+      <li><code>map</code> ritorna un array con valori derivati dall'esecuzione della callback su ogni elemento</li>
+      <li><code>filter</code> ritorna un array con gli elementi per cui la callback ha ritornato true</li>
+      <li><code>every</code> ritorna true se la callback ritorna true per tutti gli elementi</li>
+      <li><code>some</code> ritorna true se la callback ritorna true per almeno un elemento</li>
+      <li><code>reduce</code></li>
+      <li><code>reduceRight</code></li>
+    </ul>
+
+    <p>
+      Esistono inoltre gli <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays">array tipizzati <i class="fas fa-external-link-alt icon-external-link"></i></a> che permettono di manipolare dati binari.
     </p>
 
     <hr>
@@ -405,6 +442,30 @@
       </div>
     </div>
 
+    <p>
+      Un oggetto JavaScript ha proprietà associate accessibili con l'operatore <code>.</code> o  con <code>['nome_proprietà']</code> e a differenza di altri linguaggi di programmazione è possibile aggiungere proprietà in qualsiasi momento.
+      La notazione con le quadre è molto utile quando si sa il nome della proprietà solo a runtime. Un oggetto può essere creato tramite inizializzazione o tramite il costruttore.
+      Ci sono tre modi (introdotti da ES5) per enumerare le proprietà di un oggetto:
+    </p>
+    <ul>
+      <li><code>for...in</code></li>
+      <li><code>Object.keys(obj)</code></li>
+      <li><code>Object.getOwnPropertyNames(obj)</code></li>
+    </ul>
+
+    <p>
+      Tutti gli oggetti ereditano almeno da un oggetto, detto <code>prototype</code>. Si può aggiungere una proprietà a tutti gli oggetti di un tipo già definito tramite <code>obj.prototype.new_property</code>.
+      Un oggetto può avere un metodo, ovvero una funzione assegnata ad una proprietà dell'oggetto. Una proprietà può essere rimossa con il <code>delete</code>.
+    </p>
+
+    <p>
+      Gli oggetti sono di tipo riferimento, quindi due oggetti distinti non saranno mai uguali anche se hanno le stesse proprietà. Il confronto tra oggetti risulta vero solo se confrontato con sè stesso.
+    </p>
+
+    <p>
+      JavaScript è un linguaggio orientato ai prototipi più che alle classi. [...]
+    </p>
+
     <hr>
     <div class="row">
       <div class="col-auto mr-auto">
@@ -415,6 +476,19 @@
       </div>
     </div>
     <hr>
+
+    <p>
+      Una <code>Promise</code> è un oggetto che rappresenta il completamento o meno di un'operazione asincrona. Di solito è un oggetto ritornato a cui si collega una callback. Esempio:
+    </p>
+    
+    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+      functionAsync().then(successCallback, failureCallback);
+    </code></pre>
+
+    <p>
+      Il vantaggio delle callback passate con il then() è che vengono sempre eseguite, indipendentemente dal successo o l'insuccesso dell'operazione asincrona, dopo il corrente ciclo di eventi JS. 
+      Un altro vantaggio è la concatenazione di più then.
+    </p>
 
     <div class="row">
       <div class="col-auto mr-auto">
