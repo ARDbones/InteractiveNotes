@@ -3,3 +3,7 @@
 .icon-external-link{
     font-size: 0.6em;
 }
+
+pre{
+    border-left : 2px solid;
+}

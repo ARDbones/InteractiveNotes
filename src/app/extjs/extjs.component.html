@@ -22,7 +22,7 @@
     </div>
 
     <p>Una nuova classe viene definita nel seguente modo:</p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       Ext.define(class name, class members/properties, callback function);
     </code></pre>
     <p>dove:</p>
@@ -43,7 +43,7 @@
     <p>
       Ext JS permette l'uso dell'ereditarietà con due modi: <code>Ext.extend</code> o con i Mixins. Il primo metodo definisce l'estensione come proprietà:
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       Ext.define(appName.folderName.className, &#123;
         extend : 'Ext.grid.GridPanel',
         ...
@@ -60,7 +60,11 @@
       </div>
     </div>
 
+    <p>
+      Un container è il componente contenitore di altri contenitori o di componenti figli e può avere layout differenti.
+      La classe base è <code>Ext.container.Container</code>.
 
+    </p>
 
 
 

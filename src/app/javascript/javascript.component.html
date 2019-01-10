@@ -4,6 +4,7 @@
     <small>Fonte: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">Guida ufficiale MDN <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
     <small class="hiddenTS">Fonte: <a href="https://www.typescriptlang.org/docs/home.html">Guida ufficiale TS <i class="fas fa-external-link-alt icon-external-link"></i></a></small>
   </div>
+
   <div class="mt-4">
     <p>
       JavaScript è case sensitive e utilizza i caratteri Unicode.
@@ -77,7 +78,7 @@
       Le type annotations si possono usare sulle variabili, sui parametri delle funzioni e permettono anche di definire il tipo di ritorno delle funzioni.
       Una volta usata l'annotation, il tipo dichiarato è fisso e non è possibile passare valori del tipo errato.
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info hiddenTS"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info hiddenTS"><code>
       var name : string;
       function greeter(person: string): string &#123;
         return "Hello, " + person;
@@ -155,7 +156,7 @@
       <li>for...in su array</li>
       <li>for...of su oggetti iterabili</li>
     </ul>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
         for (variable in/of object) &#123;
           statements
         &#125;
@@ -163,7 +164,7 @@
     <p>Il flusso di un'iterazione può essere interrotto con un break o è possibile passare all'iterazione successiva con il continue.
       Esiste inoltre la funzione forEach() per eseguire una data funzione su ogni elemento di un array o un oggetto.
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       array.forEach(function(element) &#123;
           console.log(element);
       &#125;);
@@ -188,7 +189,7 @@
       Queste funzioni possono essere anonime o avere un nome utililizzabile per chiamate ricorsive.
       La particolarità di questa soluzione è che permette di passare funzioni ad altre funzioni come parametro.
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       var f;
       var a = "variabile";
       if(condizione)  f = function(a) &#123; statements_1 &#125;
@@ -212,7 +213,7 @@
       Il vantaggio di non avere un proprio this è di essere più chiaro in un contesto ad oggetti.
       Queste funzioni hanno i parametri di input prima della freccia e l'output/codice da eseguire dopo la freccia.
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       f(input => output);
     </code></pre>
 
@@ -310,7 +311,7 @@
       JS mette a disposizione le espressioni regolari, che si possono creare come oggetti o come litterali.
       In particolare, se l'espressione è nota e costante, conviene usare la forma litterale, mentre se può cambiare o arriva dall'esterno, conviene creare l'oggetto con il costruttore.
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       var RE = /ab+c/;
 
       var re = new RegExp('ab+c');
@@ -336,7 +337,7 @@
     <p>
       Un array contiene valori riferibili con un indice. Un array può venire creato in diversi modi:
     </p>
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto  border-info"><code>
       var arr = new Array(element0, element1, ..., elementN);
       var arr = Array(element0, element1, ..., elementN);
       var arr = [element0, element1, ..., elementN];
@@ -443,7 +444,7 @@
     </div>
 
     <p>
-      Un oggetto JavaScript ha proprietà associate accessibili con l'operatore <code>.</code> o  con <code>['nome_proprietà']</code> e a differenza di altri linguaggi di programmazione è possibile aggiungere proprietà in qualsiasi momento.
+      Un oggetto JavaScript ha proprietà associate accessibili con l'operatore <code>.</code> o  con <code>['nome_proprietà']</code>, e a differenza di altri linguaggi di programmazione è possibile aggiungere proprietà in qualsiasi momento.
       La notazione con le quadre è molto utile quando si sa il nome della proprietà solo a runtime. Un oggetto può essere creato tramite inizializzazione o tramite il costruttore.
       Ci sono tre modi (introdotti da ES5) per enumerare le proprietà di un oggetto:
     </p>
@@ -463,8 +464,21 @@
     </p>
 
     <p>
-      JavaScript è un linguaggio orientato ai prototipi più che alle classi. [...]
+      JavaScript è un linguaggio orientato ai prototipi più che alle classi. La differenza sta nella distinzione tra classi ed istanze.
+      I linguaggi orientati alle classi, come C++ e Java, hanno questa distinzione, mentre JS usa semplicemente gli oggetti.
+      Un oggetto può essere usato come prototipo per la creazione di un altro oggetto che eredita in questo modo le stesse proprietà.      
+      Non esiste l'ereditarietà multipla.
     </p>
+
+    <p>
+      JS controlla la presenza di una proprietà in 4 passaggi:
+    </p>
+    <ol>
+      <li>Controlla se la proprietà esiste localmente nell'oggetto e se presente ritorna quel valore</li>
+      <li>Se non c'è, controlla nella prototype chain</li>
+      <li>Se un oggetto della prototype chain ha la proprietà, ritorna quel valore</li>
+      <li>Se non viene trovata, l'oggetto non ha la proprietà</li>
+    </ol>
 
     <hr>
     <div class="row">
@@ -475,29 +489,79 @@
         <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
       </div>
     </div>
-    <hr>
 
     <p>
       Una <code>Promise</code> è un oggetto che rappresenta il completamento o meno di un'operazione asincrona. Di solito è un oggetto ritornato a cui si collega una callback. Esempio:
     </p>
     
-    <pre class="bg-light rounded-right mx-auto border-left border-info"><code>
+    <pre class="bg-light rounded-right mx-auto border-info"><code>
       functionAsync().then(successCallback, failureCallback);
     </code></pre>
 
     <p>
       Il vantaggio delle callback passate con il then() è che vengono sempre eseguite, indipendentemente dal successo o l'insuccesso dell'operazione asincrona, dopo il corrente ciclo di eventi JS. 
-      Un altro vantaggio è la concatenazione di più then.
+      Un altro vantaggio è la concatenazione (chaining) di più promise, utile quando vanno eseguite più operazioni asincrone che agiscono sul risultato della precedente. Un esempio di concatenazione con le funzioni freccia (arrow function)
+      e la catch finale è il seguente:
     </p>
 
+    <pre class="bg-light rounded-right mx-auto border-info"><code>
+      doSomething()
+      .then(result => doSomethingElse(result))
+      .then(newResult => doSomethingOptional()
+        .then(optionalResult => doSomethingExtraNice(optionalResult))
+        .catch(e => &#123; console.log('Catch solo per doSomethingOptional e doSomethingExtraNice') &#125;))
+      .then(finalResult => &#123;
+        console.log(`Got the final result: $&#123;finalResult&#125;`);
+        &#125;)
+      .catch(failureCallback)
+      .then(() => &#123;
+        console.log('Do this, no matter what happened before');
+        &#125;);     
+    </code></pre>
+
+    <p>
+      con <code>catch(failureCallback)</code> che è la forma contratta per <code>then(null, failureCallback)</code>. La catch viene raggiunta in caso di eccezione in uno dei passi precedenti della catena.
+      Tuttavia il catch ha effetto solo nel suo scope e se viene innestato ignora i fallimenti esterni; può essere utile per un controllo più fine degli errori.
+      Anche dopo il catch è possibile concatenare. In una concatenazione deve sempre esserci il ritorno per le callback successive.
+    </p>
+    
+    <p>
+      Esiste un problema con le vecchie API che si aspettano ancora le callback di successo e fallimento passate nel vecchio stile. La soluzione è creare una promise attorno alla funzione problematica.
+    </p>
+
+    <p>
+      Sono disponibili alcuni metodi utili nella composizione di Promise.
+      <code>Promise.resolve()</code> e <code>Promise.reject()</code> creano promise già risolte o rifiutate, <code>Promise.all()</code> e <code>Promise.race()</code> permettono di eseguire operazioni asincrone in parallelo.
+      ES8 introduce async e await che semplifica la composizione sequenziale.
+    </p>
+
+    <hr>
     <div class="row">
       <div class="col-auto mr-auto">
-        <h2 class="lead"></h2>
+        <h2 class="lead">Iteratori e generatori</h2>
       </div>
       <div class="col-auto">
         <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
       </div>
-    </div>    
+    </div>   
+
+    <p>
+      wip
+    </p>
+    
+    <hr>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        <h2 class="lead">Meta programmazione</h2>
+      </div>
+      <div class="col-auto">
+        <i class="fas fa-angle-double-up icon-go-top text-primary" (click)="goTop()"></i>
+      </div>
+    </div>
+
+    <p>
+      wip
+    </p>
 
   </div>
 </div>
