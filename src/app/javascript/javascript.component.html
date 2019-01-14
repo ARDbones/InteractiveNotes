@@ -546,7 +546,19 @@
     </div>   
 
     <p>
-      wip
+      Un iteratore è un oggetto che definisce una sequenza e ha un possibile valore di ritorno.
+      In particolare, è un oggetto che ha un metodo <code>next()</code> che ritorna un oggetto con un due proprietà:
+      <code>value</code>, che indica il valore successivo della sequenza, e <code>done</code> che indica con un booleano se l'ultimo valore della sequenza è stato consumato.
+      L'oggetto <code>Iterator</code> è quindi iterabile con il metodo <code>next</code> e viene consumato una volta giunto all'ultimo elemento.
+    </p>
+
+    <p>
+      Per quanto utili, non sono facili da creare gli iteratori custom. Una valida alternativa sono le generator function.
+      Con la sintassi <code>function*</code> si definisce una funzione con comportamento iterativo. [...]
+    </p>
+
+    <p>
+      Un oggetto è iterabile se definisce il suo comportamento iterativo. Per fare ciò deve implementare il metodo <code>@@iterator</code>.
     </p>
     
     <hr>
@@ -560,7 +572,13 @@
     </div>
 
     <p>
-      wip
+      ES6 introduce i <code>Proxy</code> per intercettare certe operazioni che accedono a attributi o metodi di oggetti e darne un'implementazione custom. 
+      L'oggetto definisce un target e un handler contenente una "trappola".
+      La guida elenca le <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming#Handlers_and_traps">trappole <i class="fas fa-external-link-alt icon-external-link"></i></a> disponibili.
+    </p>
+
+    <p>
+      <a href="https://medium.com/dailyjs/how-to-use-javascript-proxies-for-fun-and-profit-365579d4a9f8">Articolo <i class="fas fa-external-link-alt icon-external-link"></i></a> interessante sull'uso di Proxy.
     </p>
 
   </div>
